@@ -1,12 +1,17 @@
 #include "Kedy.h"
 
 int main() {
-    Kedy::PieceTable Editor("Hello, world!");
-    Editor.Insert(7, "beautiful ");
-    std::cout << Editor.GetText() << std::endl; // Outputs: Hello, beautiful world!
+    Kedy::TextEditor editor("Hello, world!");
+    
+    editor.MoveCursorRight(0, 7);
+    editor.Insert("beautiful ");
+    std::cout << editor.GetText() << std::endl; // Outputs: Hello, beautiful world!
 
-    Editor.DeleteText(7, 10);
-    std::cout << Editor.GetText() << std::endl; // Outputs: Hello, world!
+
+    editor.DeleteText(10);
+    std::cout << editor.GetText() << std::endl; // Outputs: Hello, world!
+
+    editor.PrintEditorState();
 
     return 0;
 }

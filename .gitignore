@@ -12,6 +12,11 @@ CMakeFiles/
 CMakeCache.txt
 
 .vs/
+.vscode/
+
+*.exe
+
+build/
 
 Demo.dir
 Kedy.dir
