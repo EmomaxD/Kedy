@@ -6,19 +6,19 @@ namespace Kedy {
 
     Selection::~Selection() {}
 
-    void Selection::SetStart(int pos) {
+    void Selection::SetStart(size_t pos) {
         m_Start = pos;
     }
 
-    void Selection::SetEnd(int pos) {
+    void Selection::SetEnd(size_t pos) {
         m_End = pos;
     }
 
-    int Selection::GetStart() const {
+    size_t Selection::GetStart() const {
         return m_Start;
     }
 
-    int Selection::GetEnd() const {
+    size_t Selection::GetEnd() const {
         return m_End;
     }
 

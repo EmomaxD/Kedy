@@ -12,8 +12,6 @@ copy Demo.exe ..\Demo.exe
 
 cd ..
 
-cls
-
 call Demo.exe
 
 pause

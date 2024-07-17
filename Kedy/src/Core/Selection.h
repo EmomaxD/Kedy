@@ -7,15 +7,15 @@ namespace Kedy {
         Selection();
         ~Selection();
 
-        void SetStart(int pos);
-        void SetEnd(int pos);
-        int GetStart() const;
-        int GetEnd() const;
+        void SetStart(size_t pos);
+        void SetEnd(size_t pos);
+        size_t GetStart() const;
+        size_t GetEnd() const;
         bool IsValid() const;
 
     private:
-        int m_Start;
-        int m_End;
+        size_t m_Start;
+        size_t m_End;
     };
 
 }

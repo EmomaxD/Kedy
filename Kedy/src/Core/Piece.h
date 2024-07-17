@@ -8,10 +8,10 @@ namespace Kedy {
 	struct Piece {
 
 		BufferType bufferType;
-		int start;
-		int length;
+		size_t start;
+		size_t length;
 
-		Piece(BufferType type, int start, int len)
+		Piece(BufferType type, size_t start, size_t len)
 			: bufferType(type), start(start), length(len) {}
 
 	};

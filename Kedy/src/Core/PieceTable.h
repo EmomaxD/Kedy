@@ -13,8 +13,8 @@ namespace Kedy {
 		PieceTable(const std::string& text);
 		~PieceTable();
 
-		void Insert(int pos, const std::string& text);
-		void DeleteText(int pos, int length);
+		void Insert(size_t pos, const std::string& text);
+		void DeleteText(size_t pos, size_t length);
 		std::string GetText() const;
 
 		inline const std::vector<char>& GetOriginalBuffer() const { return m_OriginalBuffer; };
@@ -26,6 +26,6 @@ namespace Kedy {
 		std::vector<char> m_AddBuffer;
 		std::vector<Piece> m_Pieces;
 
-		void SplitPiece(int pieceIndex, int pos);
+		void SplitPiece(size_t pieceIndex, size_t pos);
 	};
 }

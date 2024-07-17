@@ -7,15 +7,15 @@ namespace Kedy {
         Cursor();
         ~Cursor();
 
-        void MoveLeft(int amount = 1);
-        void MoveRight(int maxPos, int amount = 1);
-        void MoveUp(int amount = 1);
-        void MoveDown(int amount = 1);
-        void SetPosition(int pos);
-        int GetPosition() const;
+        void MoveLeft(size_t amount = 1);
+        void MoveRight(size_t maxPos, size_t amount = 1);
+        void MoveUp(size_t amount = 1);
+        void MoveDown(size_t amount = 1);
+        void SetPosition(size_t pos);
+        size_t GetPosition() const;
 
     private:
-        int m_Position;
+        size_t m_Position;
     };
 
 }
