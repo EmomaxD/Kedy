@@ -2,6 +2,11 @@
 
 namespace Kedy {
 
+    struct CursorPosition {
+        size_t line;
+        size_t column;
+    };
+
     class Cursor {
     public:
         Cursor();
@@ -11,11 +16,11 @@ namespace Kedy {
         void MoveRight(size_t maxPos, size_t amount = 1);
         void MoveUp(size_t amount = 1);
         void MoveDown(size_t amount = 1);
-        void SetPosition(size_t pos);
-        size_t GetPosition() const;
+        void SetPosition(CursorPosition pos);
+        CursorPosition GetPosition() const;
 
     private:
-        size_t m_Position;
+        CursorPosition m_Position;
     };
 
 }

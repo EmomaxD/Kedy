@@ -2,35 +2,31 @@
 
 namespace Kedy {
 
-    Cursor::Cursor() : m_Position(0) {}
+    Cursor::Cursor() : m_Position{0, 0} {}
 
     Cursor::~Cursor() {}
 
-    void Cursor::MoveLeft(size_t amount) {
-        if (m_Position - amount >= 0) {
-            m_Position -= amount;
-        }
+    void Cursor::MoveLeft(size_t amount) {    
+        m_Position.column -= amount;
     }
 
     void Cursor::MoveRight(size_t maxPos, size_t amount) {
-        if (m_Position + amount <= maxPos) {
-            m_Position += amount;
-        }
+        m_Position.column += amount;
     }
 
     void Cursor::MoveUp(size_t amount) {
-        // Implement based on line logic
+        m_Position.line -= amount;
     }
 
     void Cursor::MoveDown(size_t amount) {
-        // Implement based on line logic
+        m_Position.line += amount;
     }
 
-    void Cursor::SetPosition(size_t pos) {
+    void Cursor::SetPosition(CursorPosition pos) {
         m_Position = pos;
     }
 
-    size_t Cursor::GetPosition() const {
+    CursorPosition Cursor::GetPosition() const {
         return m_Position;
     }
 

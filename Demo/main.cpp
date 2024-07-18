@@ -19,14 +19,11 @@ int main() {
 #if 1
     Kedy::TextEditor editor((std::filesystem::path)"Demo.txt");
 
-    std::cout << editor.GetText() << std::endl;
+    editor.PrintText();
 
-    std::cout << "\nChar count: " << editor.GetCharCount() << std::endl;
-    std::cout << "WhiteSpace count: " << editor.GetWhiteSpaceCount() << std::endl;
-    std::cout << "Total Length: " << editor.GetTotalLength() << std::endl;
-    std::cout << "Line count: " << editor.GetLineCount() << std::endl;
-    std::cout << "EOL: " << editor.GetEndOfLine() << std::endl;
-    std::cout << "Extension: " << editor.GetExtension() << std::endl;
+    editor.PrintDocumentInfo();
+
+    editor.PrintPositionInfo();
 
 #endif
 

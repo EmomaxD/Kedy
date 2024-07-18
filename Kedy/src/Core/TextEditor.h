@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <unordered_map>
 #include <filesystem>
 
 #include "PieceTable.h"
@@ -52,11 +52,18 @@ namespace Kedy {
         std::string GetSelectedText(int selectionIndex) const;
 
         void PrintEditorState() const;
+        void PrintDocumentInfo() const;
+        void PrintText();
+
+        void PrintPositionInfo() const;
 
     private:
         std::string ReadFromFile(const std::filesystem::path& filePath);
         void SaveToFile(const std::filesystem::path& filePath) const;
-        void FillDocumentInfo(const std::filesystem::path& filePath);
+        void FillDocumentInfo(const std::filesystem::path& filePath, const std::string& buffer);
+
+        void CountChars(const std::string& buffer);
+        void FillPositionInfo(const std::string& buffer);
 
 
     private:
@@ -64,6 +71,7 @@ namespace Kedy {
         Document m_Document;
         std::vector<Cursor> m_Cursors;
         std::vector<Selection> m_Selections;
+        std::unordered_map<size_t, std::pair<size_t, size_t>> m_PositionInfo; // line, {startingPosition, endPosition}
         int m_ActiveCursorIndex;
     };
 }

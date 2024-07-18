@@ -10,7 +10,7 @@ namespace Kedy {
     PieceTable::~PieceTable() {}
 
     void PieceTable::Insert(size_t pos, const std::string& text) {
-        size_t currentPos = 0; // Use size_t for currentPos
+        size_t currentPos = 0;
         for (size_t i = 0; i < m_Pieces.size(); ++i) {
             Piece& piece = m_Pieces[i];
             if (currentPos <= pos && pos < currentPos + piece.length) {
@@ -32,13 +32,13 @@ namespace Kedy {
     }
 
     void PieceTable::DeleteText(size_t pos, size_t length) {
-        size_t currentPos = 0; // Use size_t for currentPos
+        size_t currentPos = 0;
         for (size_t i = 0; i < m_Pieces.size(); ++i) {
             Piece& piece = m_Pieces[i];
             if (currentPos <= pos && pos < currentPos + piece.length) {
                 SplitPiece(i, pos - currentPos);
 
-                size_t deleteEnd = pos + length; // Use size_t for deleteEnd
+                size_t deleteEnd = pos + length;
                 while (i < m_Pieces.size() && deleteEnd > currentPos) {
                     Piece& currentPiece = m_Pieces[i];
                     size_t pieceEnd = currentPos + currentPiece.length;
